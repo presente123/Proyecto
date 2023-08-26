@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3204104184812570236}
   - component: {fileID: -8453117779822970819}
   - component: {fileID: -427914155132472418}
-  m_Layer: 0
+  - component: {fileID: -5904833710360837458}
+  m_Layer: 8
   m_Name: Bala
-  m_TagString: Untagged
+  m_TagString: Proyectil_Jugador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,3 +137,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetivo: {fileID: 0}
+--- !u!58 &-5904833710360837458
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333636693438865833}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

@@ -21,24 +21,32 @@ public class Movimiento_Pers : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            this.transform.position = new Vector2(this.transform.position.x + velocidad * Time.deltaTime, this.transform.position.y);
+            this.transform.Translate(Vector3.right * velocidad * Time.deltaTime, Space.Self);
+            //this.transform.position = new Vector2(this.transform.position.x + velocidad * Time.deltaTime, this.transform.position.y);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            this.transform.position = new Vector2(this.transform.position.x - velocidad * Time.deltaTime, this.transform.position.y);
+            this.transform.Translate(Vector3.left * velocidad * Time.deltaTime, Space.Self);
+            //this.transform.position = new Vector2(this.transform.position.x - velocidad * Time.deltaTime, this.transform.position.y);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + velocidad * Time.deltaTime);
+            this.transform.Translate(Vector3.up * velocidad * Time.deltaTime, Space.Self);
+            //this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + velocidad * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - velocidad * Time.deltaTime);
+            this.transform.Translate(Vector3.down * velocidad * Time.deltaTime, Space.Self);
+            //this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - velocidad * Time.deltaTime);
         }
 
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            //this.colliderToDisable.enabled = false;
+        }
     }
 
 }
