@@ -103,6 +103,7 @@ MonoBehaviour:
   tiempo_de_vida: 5
   velocidad_bala: 2
   Bala: {fileID: 1333636693438865833}
+  "da\xF1o": 5
 --- !u!50 &-8453117779822970819
 Rigidbody2D:
   serializedVersion: 4

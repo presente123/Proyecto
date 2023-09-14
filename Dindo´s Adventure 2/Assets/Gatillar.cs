@@ -8,6 +8,8 @@ public class Gatillar : MonoBehaviour
     public GameObject Bala;
     public GameObject Minion;
 
+    //public int 
+
     // Start is called before the first frame update
     void Start()
     {

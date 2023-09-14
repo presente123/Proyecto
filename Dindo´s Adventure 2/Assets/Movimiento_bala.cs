@@ -12,7 +12,7 @@ public class Movimiento_bala : MonoBehaviour
     public GameObject Bala;
     private BoxCollider2D cola;
 
-    public int daño = 5;
+    public int daño;
 
     void Disparar()
     {
@@ -22,6 +22,7 @@ public class Movimiento_bala : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        daño = 1;
         Destroy(Bala ,tiempo_de_vida);
     }
 
@@ -39,6 +40,7 @@ public class Movimiento_bala : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Antagonista"))
         {
+            collision.gameObject.GetComponent<Comportamiento_Enemigo>().RecibirDaño(daño);
             Destroy(Bala);
         }
     }
