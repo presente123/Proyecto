@@ -10,19 +10,18 @@ public class Movimiento_bala : MonoBehaviour
     public float velocidad_bala = 2f;
 
     public GameObject Bala;
-    private BoxCollider2D cola;
+    //private BoxCollider2D cola;
 
-    public int daño;
+    public int daño = 1;
 
-    void Disparar()
-    {
+    //void Disparar()
+    //{
         //cola = Bala.GetComponent<BoxCollider2D>();
-    }
+    //}
 
     // Start is called before the first frame update
     void Start()
     {
-        daño = 1;
         Destroy(Bala ,tiempo_de_vida);
     }
 

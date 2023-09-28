@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Movimiento_Pers : MonoBehaviour
 {
+    public GameObject jugador;
+
     public float velocidad = 1f;
     public float ejex = 0;
     public float ejey = 0;
-
+    public int LímiteVida = 3;
+    public int Vida;
 
     // Start is called before the first frame update
+    public void RecibirDaño(int daño)
+    {
+        Vida -= daño;
+
+        if (Vida <= 0)
+        {
+            Destroy(jugador);
+        }
+    }
+
     void Start()
     {
        transform.position = new Vector2(1.0f, 1.0f);
+       Vida = LímiteVida;
     }
 
     // Update is called once per frame
@@ -43,7 +57,7 @@ public class Movimiento_Pers : MonoBehaviour
             //this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - velocidad * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.G))
         {
             //this.colliderToDisable.enabled = false;
         }

@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempo_de_vida: 5
-  velocidad_bala: 2
+  velocidad_bala: 5
   Bala: {fileID: 1333636693438865833}
-  "da\xF1o": 5
+  "da\xF1o": 1
 --- !u!50 &-8453117779822970819
 Rigidbody2D:
   serializedVersion: 4

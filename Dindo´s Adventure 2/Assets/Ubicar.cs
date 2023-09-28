@@ -8,7 +8,7 @@ public class Ubicar : MonoBehaviour
 
     [SerializeField] Transform objetivo;
 
-    public float velocidad_bala = 2f;
+    public float velocidad_enemigo = 2f;
 
     void Rotacion()
     {
@@ -33,6 +33,6 @@ public class Ubicar : MonoBehaviour
     {
         Rotacion();
 
-        this.transform.Translate(Vector3.right * velocidad_bala * Time.deltaTime, Space.Self);
+        this.transform.Translate(Vector3.right * velocidad_enemigo * Time.deltaTime, Space.Self);
     }
 }

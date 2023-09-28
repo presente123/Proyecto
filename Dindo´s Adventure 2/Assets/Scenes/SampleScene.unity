@@ -297,9 +297,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778a74a11e0b07541988226618b2db10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jugador: {fileID: 421612872}
   velocidad: 5
   ejex: 0
   ejey: 0
+  "L\xEDmiteVida": 3
+  Vida: 0
 --- !u!50 &421612879
 Rigidbody2D:
   serializedVersion: 4
@@ -389,10 +392,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6925979905988268821, guid: d38efb69c46351048b4c38585552b8e1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8365373589740441158, guid: d38efb69c46351048b4c38585552b8e1, type: 3}
       propertyPath: Jugador
       value: 
       objectReference: {fileID: 421612876}
+    - target: {fileID: 8365373589740441158, guid: d38efb69c46351048b4c38585552b8e1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8679550835952604240, guid: d38efb69c46351048b4c38585552b8e1, type: 3}
       propertyPath: m_Name
       value: Minion
@@ -589,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jugador: {fileID: 421612876}
   objetivo: {fileID: 0}
-  velocidad_bala: 1
+  velocidad_enemigo: 2
 --- !u!61 &639678165
 BoxCollider2D:
   m_ObjectHideFlags: 0

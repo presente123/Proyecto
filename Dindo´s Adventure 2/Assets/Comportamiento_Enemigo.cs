@@ -8,6 +8,7 @@ public class Comportamiento_Enemigo : MonoBehaviour
 
     public int LímiteVida = 3;
     public int Vida;
+    public int daño = 1;
 
     private void Start()
     {
@@ -16,10 +17,10 @@ public class Comportamiento_Enemigo : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Proyectil_Jugador"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            //collision.gameObject.GetComponent<Movimiento_bala>();
-            //Destroy(enemigo);
+            collision.gameObject.GetComponent<Movimiento_Pers>().RecibirDaño(daño);
+            Destroy(enemigo);
         }
     }
 
