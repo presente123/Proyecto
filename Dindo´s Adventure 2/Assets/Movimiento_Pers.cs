@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movimiento_Pers : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class Movimiento_Pers : MonoBehaviour
 
         if (Vida <= 0)
         {
-            Destroy(jugador);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //Destroy(jugador);
         }
     }
 
