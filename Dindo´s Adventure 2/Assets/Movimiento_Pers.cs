@@ -27,7 +27,7 @@ public class Movimiento_Pers : MonoBehaviour
 
     void Start()
     {
-       transform.position = new Vector2(1.0f, 1.0f);
+       transform.position = new Vector2(ejex, ejey);
        Vida = LímiteVida;
     }
 
