@@ -59,10 +59,6 @@ public class Movimiento_Pers : MonoBehaviour
             //this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - velocidad * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.G))
-        {
-            //this.colliderToDisable.enabled = false;
-        }
     }
 
 }
