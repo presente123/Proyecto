@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Comportamiento_Enemigo : MonoBehaviour
 {
+    public GameObject jugador;
     public GameObject enemigo;
 
     public int LímiteVida = 3;
     public int Vida;
     public int daño = 1;
+    public int puntaje = 1;
 
     private void Start()
     {
@@ -31,6 +33,7 @@ public class Comportamiento_Enemigo : MonoBehaviour
         if (Vida <= 0)
         {
             Destroy(enemigo);
+            jugador.GetComponent<Movimiento_Pers>().SumarPuntos(puntaje);
         }
     }
 

@@ -6,14 +6,12 @@ using UnityEngine.UI;
 public class Contador_Puntos : MonoBehaviour
 {
     public Text textocontador;
+    public GameObject jugador;
     private int puntuacion = 0;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            puntuacion += 1;
-        }
+        puntuacion = jugador.GetComponent<Movimiento_Pers>().NivelTotal;
 
         textocontador.text = puntuacion.ToString();
     }

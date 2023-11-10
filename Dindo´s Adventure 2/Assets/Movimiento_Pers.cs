@@ -12,6 +12,7 @@ public class Movimiento_Pers : MonoBehaviour
     public float ejey = 0;
     public int LímiteVida = 3;
     public int Vida;
+    public int NivelTotal;
 
     // Start is called before the first frame update
     public void RecibirDaño(int daño)
@@ -23,6 +24,11 @@ public class Movimiento_Pers : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //Destroy(jugador);
         }
+    }
+
+    public void SumarPuntos(int puntos)
+    {
+        NivelTotal += puntos;
     }
 
     void Start()

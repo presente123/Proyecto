@@ -9,10 +9,11 @@ public class Ubicar : MonoBehaviour
     [SerializeField] Transform objetivo;
 
     public float velocidad_enemigo = 2f;
+    public Vector3 posicionamiento;
 
     void Rotacion()
     {
-        Vector3 posicion_de_J1 = Jugador.position;
+        Vector3 posicion_de_J1 = posicionamiento;
         posicion_de_J1.z = 0;
 
         Vector3 mirar = posicion_de_J1 - objetivo.position;
@@ -31,6 +32,8 @@ public class Ubicar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        posicionamiento = Jugador.position;
+
         Rotacion();
 
         this.transform.Translate(Vector3.right * velocidad_enemigo * Time.deltaTime, Space.Self);
