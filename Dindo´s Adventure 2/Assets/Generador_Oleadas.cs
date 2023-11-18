@@ -9,6 +9,7 @@ public class Generador_Oleadas : MonoBehaviour
     public int nivel1 = 3;
     public int nivel2 = 6;
     public int nivel3 = 9;
+    public int nivelfinal = 16;
     private int progreso;
 
     // Start is called before the first frame update
