@@ -13,7 +13,7 @@ public class Gatillar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Bala.GetComponent<Movimiento_bala>().RestablecerValores();
     }
 
     // Update is called once per frame

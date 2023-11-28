@@ -5,6 +5,7 @@ using UnityEngine;
 public class Generador_Oleadas : MonoBehaviour
 {
     public GameObject jugador;
+    public GameObject menu;
     public int fase;
     public int nivel1 = 3;
     public int nivel2 = 6;
@@ -32,13 +33,31 @@ public class Generador_Oleadas : MonoBehaviour
 
         if (progreso >= nivel1  && fase == 2)
         {
+            jugador.GetComponent<Tiempo_Control>().Pausar();
+            menu.SetActive(true);
+            menu.GetComponent<Menu_Mejoras>().DarOpciones();
+
             jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivel2);
             fase += 1;
         }
 
         if (progreso >= (nivel1 + nivel2) && fase == 3)
         {
+            jugador.GetComponent<Tiempo_Control>().Pausar();
+            menu.SetActive(true);
+            menu.GetComponent<Menu_Mejoras>().DarOpciones();
+
             jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivel3);
+            fase += 1;
+        }
+
+        if (progreso >= (nivel1 + nivel2 + nivel3) && fase == 4)
+        {
+            jugador.GetComponent<Tiempo_Control>().Pausar();
+            menu.SetActive(true);
+            menu.GetComponent<Menu_Mejoras>().DarOpciones();
+
+            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivelfinal);
             fase += 1;
         }
     }

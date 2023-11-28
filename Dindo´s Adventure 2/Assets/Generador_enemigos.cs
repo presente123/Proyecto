@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Generador_enemigos : MonoBehaviour
 {
+    public GameObject jugador;
     public GameObject Minion;
-    public float rango = 13f;
+    public float rango = 10f;
     public float rango_x ;
     public float rango_y ;
-    private Vector2 radio;
-    private int distanciaX;
-    private int distanciaY;
     private Vector2 posicion;
+    private int Signo_x; 
+    private int Signo_y;
+    private List<int> Valores = new();
 
     public void CrearEnemigos(int cantidad)
     {
@@ -33,13 +34,14 @@ public class Generador_enemigos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Valores.Add(-1);
+        Valores.Add(1);
     }
 
     // Update is called once per frame   Random.Range(-5f, 5f)
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             do {
                 rango_x = this.transform.position.x + Random.Range(-15.10f, 15.10f);
@@ -54,29 +56,15 @@ public class Generador_enemigos : MonoBehaviour
             Instantiate(Minion, radio * 5, Quaternion.identity);*/
         }
         
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            radio = Random.insideUnitCircle * 5;
+            rango_x =  Random.Range(00.00f, 15.00f) ;
+            rango_y =  Random.Range(00.00f, 15.00f) ;
 
-            if (radio.x >= 0)
-            {
-                distanciaX = 1;
-            }
-            else
-            {
-                distanciaX = -1;
-            }
+            Signo_x = Random.Range(0, 1);
+            Signo_y = Random.Range(0, 1);
 
-            if (radio.y >= 0)
-            {
-                distanciaY = 1;
-            }
-            else
-            {
-                distanciaY = -1;
-            }
-
-            Instantiate(Minion, new Vector2(radio.x + this.transform.position.x + (6 * distanciaX), radio.y + this.transform.position.y + (6 * distanciaY)), Quaternion.identity);
+            Instantiate(Minion, new Vector2(jugador.transform.position.x + (rango_x  * Valores[Signo_x]), jugador.transform.position.y + (rango_y * Valores[Signo_y])), Quaternion.identity);
         }
     }
 }
