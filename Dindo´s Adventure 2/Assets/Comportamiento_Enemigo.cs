@@ -23,6 +23,7 @@ public class Comportamiento_Enemigo : MonoBehaviour
         {
             collision.gameObject.GetComponent<Movimiento_Pers>().RecibirDaño(daño);
             Destroy(enemigo);
+            jugador.GetComponent<Movimiento_Pers>().SumarPuntos(puntaje);
         }
     }
 

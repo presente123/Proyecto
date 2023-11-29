@@ -6,12 +6,15 @@ public class Generador_Oleadas : MonoBehaviour
 {
     public GameObject jugador;
     public GameObject menu;
+    public GameObject[] listado;
+    public GameObject barra;
+    public int contador;
     public int fase;
     public int nivel1 = 3;
     public int nivel2 = 6;
     public int nivel3 = 9;
     public int nivelfinal = 16;
-    private int progreso;
+    private int progreso; 
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +28,12 @@ public class Generador_Oleadas : MonoBehaviour
     {
         progreso = jugador.GetComponent<Movimiento_Pers>().NivelTotal;
 
+        listado = GameObject.FindGameObjectsWithTag("Antagonista");
+        contador = listado.Length;
+
         if (fase == 1)
         {
-            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivel1);
+            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivel1, fase);
             fase += 1;
         }
 
@@ -37,7 +43,7 @@ public class Generador_Oleadas : MonoBehaviour
             menu.SetActive(true);
             menu.GetComponent<Menu_Mejoras>().DarOpciones();
 
-            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivel2);
+            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivel2, fase);
             fase += 1;
         }
 
@@ -47,7 +53,7 @@ public class Generador_Oleadas : MonoBehaviour
             menu.SetActive(true);
             menu.GetComponent<Menu_Mejoras>().DarOpciones();
 
-            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivel3);
+            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivel3, fase);
             fase += 1;
         }
 
@@ -57,8 +63,23 @@ public class Generador_Oleadas : MonoBehaviour
             menu.SetActive(true);
             menu.GetComponent<Menu_Mejoras>().DarOpciones();
 
-            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivelfinal);
+            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(nivelfinal, fase);
             fase += 1;
+        }
+
+        if (progreso == 34 && fase == 5)
+        {
+            fase += 1;
+        }
+
+        
+
+        if (fase == 6 && contador == 0)
+        {
+            barra.SetActive(false);
+            jugador.GetComponent<Generador_enemigos>().CrearEnemigos(1, fase);
+            fase += 1;
+
         }
     }
 }

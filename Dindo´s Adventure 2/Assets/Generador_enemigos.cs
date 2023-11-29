@@ -6,65 +6,72 @@ public class Generador_enemigos : MonoBehaviour
 {
     public GameObject jugador;
     public GameObject Minion;
-    public float rango = 10f;
+    public GameObject Pl;
+    public GameObject Robot;
+    public GameObject JF;
+    private GameObject Enemigo;
+    public float rango;
     public float rango_x ;
     public float rango_y ;
-    private Vector2 posicion;
-    private int Signo_x; 
-    private int Signo_y;
-    private List<int> Valores = new();
 
-    public void CrearEnemigos(int cantidad)
+    private int aleatorio;
+
+    public void CrearEnemigos(int cantidad, int Fase)
     {
-        for(int i = 0; i < cantidad; i++) { 
-            do
+        for(float i = 0; i < cantidad; i++) { 
+            aleatorio = Random.Range(0, 4);
+
+            if ( aleatorio == 0 )
             {
-                rango_x = this.transform.position.x + Random.Range(-15.10f, 15.10f);
-                rango_y = this.transform.position.y + Random.Range(-15.10f, 15.10f);
+                rango_x = jugador.transform.position.x + rango + i;
+                rango_y = jugador.transform.position.y + rango + i;
+            }
+            else if (aleatorio == 1)
+            {
+                rango_x = jugador.transform.position.x - rango - i;
+                rango_y = jugador.transform.position.y + rango + i;
+            }
+            else if (aleatorio == 2)
+            {
+                rango_x = jugador.transform.position.x + rango + i;
+                rango_y = jugador.transform.position.y - rango - i;
+            }
+            else if (aleatorio == 3)
+            {
+                rango_x = jugador.transform.position.x - rango - i;
+                rango_y = jugador.transform.position.y - rango - i;
             }
 
-            while (rango < rango_x && rango_x < (rango * -1) && rango < rango_y && rango_y < (rango * -1));
+            if (Fase == 1 || aleatorio == 0 && Fase != 6 || aleatorio == 3 && Fase != 6)
+            {
+                Enemigo = Minion;
+            }
+            else if (Fase != 1 && Fase != 6 && aleatorio == 1)
+            {
+                Enemigo = Pl;
+            }
+            else if (Fase != 1 && Fase != 6 && aleatorio == 2)
+            {
+                Enemigo = Robot;
+            }
+            else if (Fase == 6)
+            {
+                Enemigo = JF;
+            }
 
-            posicion = new Vector2(this.transform.position.x + Random.Range(-15.10f, 15.10f), this.transform.position.y + Random.Range(-15.10f, 15.10f));
-
-            Instantiate(Minion, posicion, Quaternion.identity);
+            Instantiate(Enemigo, new Vector2(rango_x, rango_y), Quaternion.identity);
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Valores.Add(-1);
-        Valores.Add(1);
+
     }
 
     // Update is called once per frame   Random.Range(-5f, 5f)
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            do {
-                rango_x = this.transform.position.x + Random.Range(-15.10f, 15.10f);
-                rango_y = this.transform.position.y + Random.Range(-15.10f, 15.10f);
-            }
-            while (rango < rango_x && rango_x < (rango*-1) && rango < rango_y && rango_y < (rango * -1));
-            Instantiate(Minion, new Vector2(this.transform.position.x + Random.Range(-15.10f, 15.10f), this.transform.position.y + Random.Range(-15.10f, 15.10f)), Quaternion.identity);
-        
-            /*
-            radio = Random.insideUnitSphere;
-            posicion = radio + Minion.GetComponents<Ubicar>().po
-            Instantiate(Minion, radio * 5, Quaternion.identity);*/
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            rango_x =  Random.Range(00.00f, 15.00f) ;
-            rango_y =  Random.Range(00.00f, 15.00f) ;
 
-            Signo_x = Random.Range(0, 1);
-            Signo_y = Random.Range(0, 1);
-
-            Instantiate(Minion, new Vector2(jugador.transform.position.x + (rango_x  * Valores[Signo_x]), jugador.transform.position.y + (rango_y * Valores[Signo_y])), Quaternion.identity);
-        }
     }
 }

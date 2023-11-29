@@ -23,9 +23,16 @@ public class Ubicar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        velocidad_enemigo = 2f;
+
         if (objetivo == null)
         {
             objetivo = transform;
+        }
+
+        if (Jugador.GetComponent<Movimiento_Pers>().NivelTotal == 34)
+        {
+            velocidad_enemigo = Jugador.GetComponent<Movimiento_Pers>().velocidad += 0.5f;
         }
     }
 

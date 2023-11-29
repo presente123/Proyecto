@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu final/Menu defuncion.unity
     guid: 02a7c155ab646b84a98e0e97f6fd38af
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Tutorial.unity
+    guid: 3757fcec881fbb748bbc9fdc0c3414c1
+  - enabled: 1
+    path: Assets/Scenes/Victoria/Victoria.unity
+    guid: 87bd6ae703815524b8a7149e90f2a915
   m_configObjects: {}

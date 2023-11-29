@@ -15,6 +15,20 @@ public class Cambiar_Menu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
+    public void VolverInicioT()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+    }
+    public void VolverInicioV()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
+    }
+
+    public void LlevarTutorial()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+    }
+
     public void Salir()
     {
         Debug.Log("Salir");

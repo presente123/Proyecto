@@ -47,9 +47,7 @@ public class Movimiento_bala : MonoBehaviour
     {
 
         Bala.transform.Translate(Vector3.right * velocidad_bala * Time.deltaTime, Space.Self);
-
         //this.transform.position = new Vector2(Bala.transform.position.x + velocidad_bala * Time.deltaTime, Bala.transform.position.y);
-       
 
     }
     private void OnCollisionEnter2D(Collision2D collision)

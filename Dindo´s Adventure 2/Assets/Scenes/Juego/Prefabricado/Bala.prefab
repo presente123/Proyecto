@@ -100,11 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e326848cfedd15a48adbff51fb478180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempo_de_vida: 5
-  velocidad_bala: 12
+  tiempo_de_vida: 4
+  velocidad_bala: 4
   Bala: {fileID: 1333636693438865833}
   valoresB: {fileID: 5903374014787079310}
-  "da\xF1o": 1
+  "da\xF1o": 10
 --- !u!50 &-8453117779822970819
 Rigidbody2D:
   serializedVersion: 4
