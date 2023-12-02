@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +10,7 @@ public class Movimiento_Pers : MonoBehaviour
     public GameObject Pared;
     public RawImage Fondo;
     public Canvas Inter;
+    public SpriteRenderer spriteRenderer;
     public float velocidad = 2f ;
     public float ejex = 0;
     public float ejey = 0;
@@ -18,8 +18,10 @@ public class Movimiento_Pers : MonoBehaviour
     public int Vida;
     public int NivelTotal;
 
+
+
     // Start is called before the first frame update
-    public void Ganar()
+    public void Ganar() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
@@ -28,7 +30,7 @@ public class Movimiento_Pers : MonoBehaviour
     {
         velocidad = 2f;
         LímiteVida = 3;
-        valoresJ.localScale = new Vector3(1.0f, 2.0f, 1.0f);
+        valoresJ.localScale = new Vector3(3.5f, 4.0f, 1.0f);
         RestablecerVida();
 
     }
@@ -73,8 +75,9 @@ public class Movimiento_Pers : MonoBehaviour
 
     void Start()
     {
-       transform.position = new Vector2(ejex, ejey);
-       RestablecerValores();
+        GetComponent<Tiempo_Control>().Reanudar();
+        transform.position = new Vector2(ejex, ejey);
+        RestablecerValores();
     }
 
     // Update is called once per frame
@@ -119,19 +122,14 @@ public class Movimiento_Pers : MonoBehaviour
                 jugador.GetComponent<Tiempo_Control>().Reanudar();
             }
         }
+        
+        float HAxis = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKey(KeyCode.K)) {
-            Pared.SetActive(false);
-        }
-
-        if (Input.GetKey(KeyCode.L)) {
-            Pared.SetActive(true);
-        }
-
-
-        if (Input.GetKey(KeyCode.E))
+        if (HAxis > 0)
         {
-            valoresJ.localScale = new Vector3(0.5f, 1.0f, 1.0f);
+            spriteRenderer.flipX = true;
+        } else if (HAxis < 0) {
+            spriteRenderer.flipX = false;
         }
 
         if (NivelTotal >= 35)

@@ -8,7 +8,11 @@ public class Ubicar : MonoBehaviour
 
     [SerializeField] Transform objetivo;
 
+    public GameObject jug;
+    public GameObject jefe;
     public float velocidad_enemigo = 2f;
+    private float vel;
+    private int put;
     public Vector3 posicionamiento;
 
     void Rotacion()
@@ -23,17 +27,19 @@ public class Ubicar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        velocidad_enemigo = 2f;
+        vel = jug.GetComponent<Movimiento_Pers>().velocidad;
+        put = jug.GetComponent<Movimiento_Pers>().NivelTotal;
 
         if (objetivo == null)
         {
             objetivo = transform;
         }
-
-        if (Jugador.GetComponent<Movimiento_Pers>().NivelTotal == 34)
+        
+        if (vel == 4f && put >= 30)
         {
-            velocidad_enemigo = Jugador.GetComponent<Movimiento_Pers>().velocidad += 0.5f;
+            velocidad_enemigo += 2.4f;
         }
+
     }
 
     // Update is called once per frame

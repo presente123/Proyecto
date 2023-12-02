@@ -19,7 +19,7 @@ public class Movimiento_bala : MonoBehaviour
     {
         velocidad_bala = 4f;
         daño = 1;
-        valoresB.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        valoresB.localScale = new Vector3(0.2f, 0.2f, 0.2f);
     }
 
     public void VelocidadDeBala()
@@ -33,7 +33,7 @@ public class Movimiento_bala : MonoBehaviour
     }
     public void TamañoDeBala()
     {
-        valoresB.localScale = new Vector3(2f, 2f, 1.0f);
+        valoresB.localScale = new Vector3(0.5f, 0.5f, 1.0f);
     }
 
     // Start is called before the first frame update

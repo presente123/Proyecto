@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 3204104184812570236}
   - component: {fileID: -8453117779822970819}
   - component: {fileID: -427914155132472418}
-  - component: {fileID: -5904833710360837458}
+  - component: {fileID: 7249652446582601970}
+  - component: {fileID: 5129254429748390632}
+  - component: {fileID: 7150217088666437896}
   m_Layer: 8
   m_Name: Bala
   m_TagString: Proyectil_Jugador
@@ -29,9 +31,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333636693438865833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.84, y: 0.09, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -4.6105, y: -0.0117, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.7571955, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5fa43881fca933f4ebd2c7fd9f0c33bd, type: 3}
+  m_Color: {r: 0.75686276, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.7, y: 2.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -104,7 +106,7 @@ MonoBehaviour:
   velocidad_bala: 4
   Bala: {fileID: 1333636693438865833}
   valoresB: {fileID: 5903374014787079310}
-  "da\xF1o": 10
+  "da\xF1o": 1
 --- !u!50 &-8453117779822970819
 Rigidbody2D:
   serializedVersion: 4
@@ -139,8 +141,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetivo: {fileID: 0}
---- !u!58 &-5904833710360837458
-CircleCollider2D:
+--- !u!111 &7249652446582601970
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333636693438865833}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 27312abe9a4b2c04c8433c9dda76b3ec, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 728e265cb75790b4ba49c9805f9f2e96, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &5129254429748390632
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333636693438865833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc6a0f96940e1e9498d5deb5720dea6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &7150217088666437896
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -152,6 +190,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0.04, y: -0}
+  m_Size: {x: 6.44, y: 2.5}
+  m_Direction: 1
